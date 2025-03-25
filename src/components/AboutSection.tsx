@@ -1,6 +1,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import AnimatedCard from './AnimatedCard';
+import { Avatar, AvatarImage, AvatarFallback } from './ui/avatar';
 
 const AboutSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -45,10 +46,11 @@ const AboutSection: React.FC = () => {
             <AnimatedCard className="p-4 aspect-square max-w-md mx-auto">
               <div className="bg-gradient-to-br from-lilac/30 to-lilac-dark/20 w-full h-full rounded-lg flex items-center justify-center">
                 <div className="relative w-4/5 h-4/5">
-                  {/* Placeholder for profile image - replace with actual image */}
-                  <div className="absolute inset-1 bg-dark-lighter rounded-lg flex items-center justify-center text-gray-400">
-                    <span className="text-sm">Your Photo</span>
-                  </div>
+                  <img 
+                    src="/lovable-uploads/45820f50-b918-4aff-932d-3094dba81ab5.png" 
+                    alt="Yuvashree's Photo" 
+                    className="absolute inset-0 w-full h-full object-cover rounded-lg shadow-xl z-10"
+                  />
                   <div className="absolute inset-0 border-2 border-lilac rounded-lg transform translate-x-3 translate-y-3"></div>
                 </div>
               </div>
@@ -79,7 +81,7 @@ const AboutSection: React.FC = () => {
               <ul className="space-y-2 text-left">
                 <li className="flex items-center">
                   <span className="text-lilac font-semibold w-24">Name:</span>
-                  <span className="text-gray-300">Your Name</span>
+                  <span className="text-gray-300">Yuvashree</span>
                 </li>
                 <li className="flex items-center">
                   <span className="text-lilac font-semibold w-24">Age:</span>

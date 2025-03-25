@@ -23,7 +23,7 @@ const ParticleBackground: React.FC = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
     
-    // Define initParticles function first, before it's called
+    // Define initParticles function
     const initParticles = () => {
       particles.current = [];
       const particleCount = Math.min(Math.floor((canvas.width * canvas.height) / 15000), 100);

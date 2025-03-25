@@ -90,7 +90,7 @@ const Hero: React.FC = () => {
           style={{ transformStyle: 'preserve-3d', transitionDelay: '500ms' }}
         >
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold font-display tracking-tight text-gradient text-shadow">
-            Your Name
+            Yuvashree
           </h1>
         </div>
         
