@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import AnimatedCard from './AnimatedCard';
 
@@ -17,21 +16,9 @@ const ProjectsSection: React.FC = () => {
   
   const projects: Project[] = [
     {
-      title: 'Personal Portfolio Website',
-      description: 'A responsive portfolio website built from scratch to showcase my projects and skills.',
-      technologies: ['HTML', 'CSS', 'JavaScript', 'React'],
-      category: 'web',
-    },
-    {
-      title: 'Weather Dashboard App',
-      description: 'A web application that displays current weather and forecasts based on user location or search.',
-      technologies: ['React', 'API Integration', 'Responsive Design'],
-      category: 'web',
-    },
-    {
-      title: 'Task Management App',
-      description: 'A simple but effective tool for organizing tasks with categories and priority levels.',
-      technologies: ['HTML', 'CSS', 'JavaScript', 'LocalStorage'],
+      title: 'Interactive 3D Resume',
+      description: 'A responsive portfolio website with animations, particle effects, and interactive sections to showcase my skills and projects.',
+      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Animation'],
       category: 'web',
     },
     {
@@ -39,18 +26,6 @@ const ProjectsSection: React.FC = () => {
       description: 'A collaborative platform for students to share study resources and materials.',
       technologies: ['React', 'Firebase', 'Tailwind CSS'],
       category: 'web',
-    },
-    {
-      title: 'Fitness Tracker UI Concept',
-      description: 'UI/UX design for a mobile fitness tracking application concept.',
-      technologies: ['Figma', 'UI Design', 'Mobile Design'],
-      category: 'mobile',
-    },
-    {
-      title: 'Data Visualization Project',
-      description: 'Interactive visualizations of public datasets for educational purposes.',
-      technologies: ['Python', 'Data Analysis', 'Visualization'],
-      category: 'other',
     },
   ];
   
@@ -95,9 +70,9 @@ const ProjectsSection: React.FC = () => {
       
       <div className="container mx-auto px-4">
         <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-4 font-display">Featured Projects</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gradient mb-4 font-display">My Projects</h2>
           <p className="text-gray-300 max-w-2xl mx-auto">
-            A collection of my personal and academic projects that showcase my skills and creativity.
+            These are the projects I'm currently working on as I begin my journey in tech.
           </p>
         </div>
         
@@ -127,7 +102,7 @@ const ProjectsSection: React.FC = () => {
           </div>
           
           {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {filteredProjects.map((project, index) => (
               <div 
                 key={project.title}
@@ -167,13 +142,13 @@ const ProjectsSection: React.FC = () => {
           </div>
         </div>
         
-        {/* Call to action */}
+        {/* Update call to action for someone just starting out */}
         <div className={`mt-16 text-center transition-all duration-700 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <p className="text-gray-300 mb-6">
-            These projects represent my journey as a developer. I'm constantly working on new ideas!
+            I'm just beginning my development journey and excited to work on more projects soon!
           </p>
           <button className="px-6 py-3 bg-lilac hover:bg-lilac-dark text-white font-medium rounded-full transition-all duration-300">
-            See More Projects
+            Let's Collaborate
           </button>
         </div>
       </div>
