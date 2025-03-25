@@ -23,15 +23,7 @@ const ParticleBackground: React.FC = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
     
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      initParticles();
-    };
-    
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-    
+    // Define initParticles function first, before it's called
     const initParticles = () => {
       particles.current = [];
       const particleCount = Math.min(Math.floor((canvas.width * canvas.height) / 15000), 100);
@@ -50,6 +42,16 @@ const ParticleBackground: React.FC = () => {
         });
       }
     };
+    
+    // Now define resizeCanvas after initParticles is defined
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      initParticles();
+    };
+    
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
     
     const drawParticles = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
