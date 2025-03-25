@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,6 +53,16 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				lilac: {
+					light: '#B18AED',
+					DEFAULT: '#9D70D5',
+					dark: '#7952B3',
+				},
+				dark: {
+					lighter: '#161622',
+					DEFAULT: '#0F0F13',
+					deeper: '#090910',
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -84,11 +95,64 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
+				},
+				'pulse-subtle': {
+					'0%, 100%': {
+						opacity: '1'
+					},
+					'50%': {
+						opacity: '0.8'
+					}
+				},
+				'rotate-slow': {
+					'0%': {
+						transform: 'rotate(0deg)'
+					},
+					'100%': {
+						transform: 'rotate(360deg)'
+					}
+				},
+				'fadeIn': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(20px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'spotlight': {
+					'0%': {
+						opacity: '0',
+						transform: 'translate(-50%, -50%) scale(0.5)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translate(-50%, -50%) scale(1)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 6s ease-in-out infinite',
+				'pulse-subtle': 'pulse-subtle 3s ease-in-out infinite',
+				'rotate-slow': 'rotate-slow 8s linear infinite',
+				'fadeIn': 'fadeIn 0.7s ease-out forwards',
+				'spotlight': 'spotlight 2s ease forwards'
+			},
+			fontFamily: {
+				'sans': ['Inter', 'ui-sans-serif', 'system-ui'],
+				'display': ['Lexend', 'ui-sans-serif', 'system-ui'],
 			}
 		}
 	},
