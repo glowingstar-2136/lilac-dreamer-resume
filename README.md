@@ -1,69 +1,66 @@
-# Welcome to your Lovable project
+Lilac Dreamer Resume 🌸
+A personal portfolio website built with TypeScript and CSS
 
-## Project info
+📌 Overview
+Lilac Dreamer Resume is a modern, beautifully designed portfolio website that showcases my skills, projects, and achievements. Built using React, TypeScript, Vite, shadcn-ui and Tailwind CSS, this site provides a structured way to display my work while offering a seamless user experience.
 
-**URL**: https://lovable.dev/projects/57e18da2-fa02-409f-9099-992922ccb560
+🔹 Features
+✅ Fully responsive design ✨
+✅ Interactive contact form that sends messages directly to my Gmail 📩
+✅ Clean and minimalistic UI 💜
+✅ Organized projects showcase with smooth transitions 🖥️
+✅ Fast and optimized using Vite ⚡
 
-## How can I edit this code?
+🚀 Tech Stack
+Frontend: TypeScript, CSS
 
-There are several ways of editing your application.
+Build Tool: Vite
 
-**Use Lovable**
+UI Components: shadcn-ui, Tailwind CSS
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/57e18da2-fa02-409f-9099-992922ccb560) and start prompting.
+Deployment: (Mention where it’s deployed, e.g., Vercel, Netlify, or Lovable)
 
-Changes made via Lovable will be committed automatically to this repo.
+📂 Folder Structure
+csharp
+Copy
+Edit
+Lilac-Dreamer-Resume/
+│── src/                      # Source code
+│   │── components/           # Reusable UI components
+│   │── pages/                # Main pages (Home, About, Projects, Contact)
+│   │── assets/               # Images, icons, and other assets
+│   │── styles/               # CSS styles
+│── public/                   # Static files
+│── package.json              # Dependencies and scripts
+│── README.md                 # Project documentation
+│── vite.config.ts            # Vite configuration
+│── tsconfig.json             # TypeScript configuration
+💻 Installation & Usage
+To run this project locally, follow these steps:
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+1️⃣ Clone the repository
+bash
+Copy
+Edit
+git clone <your-github-repo-url>
+cd Lilac-Dreamer-Resume
+2️⃣ Install dependencies
+bash
+Copy
+Edit
+npm install
+3️⃣ Run the development server
+bash
+Copy
+Edit
 npm run dev
-```
+This will start the project in your browser at http://localhost:5173.
 
-**Edit a file directly in GitHub**
+🌐 Live Demo
+🔗 View Portfolio Online (Replace with your live site link)
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+📬 Contact Me
+If you’d like to reach out, simply use the Contact Me form on the website. Your message will be automatically sent to my Gmail, and I’ll respond as soon as possible. 🚀
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/57e18da2-fa02-409f-9099-992922ccb560) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+📜 License
+This project is licensed under the MIT License. Feel free to use and modify it as needed.
