@@ -2,41 +2,93 @@
 import React, { useEffect, useRef, useState } from 'react';
 import AnimatedCard from './AnimatedCard';
 import { useToast } from "@/hooks/use-toast";
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import * as z from 'zod';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+
+// Define the form schema with validation
+const formSchema = z.object({
+  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
+  email: z.string().email({ message: "Please enter a valid email address." }),
+  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
+});
+
+type FormValues = z.infer<typeof formSchema>;
 
 const ContactSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    
-    // Show success message
-    toast({
-      title: "Message Sent",
-      description: "Thanks for reaching out! I'll get back to you soon.",
-      variant: "default",
-    });
-    
-    // Reset form
-    setFormData({
+  // Initialize form
+  const form = useForm<FormValues>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
       name: '',
       email: '',
       message: '',
-    });
+    },
+  });
+
+  const handleSubmit = async (data: FormValues) => {
+    setIsSubmitting(true);
+    
+    try {
+      // Prepare the email data
+      const emailData = {
+        to: "yuvashreecv@gmail.com",
+        subject: `New contact from ${data.name}`,
+        replyTo: data.email,
+        message: `
+          Name: ${data.name}
+          Email: ${data.email}
+          
+          Message:
+          ${data.message}
+        `,
+      };
+      
+      // Use Email JS service to send the email
+      const response = await fetch("https://formsubmit.co/yuvashreecv@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          message: data.message,
+        }),
+      });
+      
+      if (response.ok) {
+        // Show success message
+        toast({
+          title: "Message Sent",
+          description: "Thanks for reaching out! I'll get back to you soon.",
+          variant: "default",
+        });
+        
+        // Reset form
+        form.reset();
+      } else {
+        throw new Error("Failed to send message");
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast({
+        title: "Something went wrong",
+        description: "Your message could not be sent. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   useEffect(() => {
@@ -158,59 +210,73 @@ const ContactSection: React.FC = () => {
               <AnimatedCard className="p-8">
                 <h3 className="text-2xl font-bold text-lilac-light mb-6 text-left">Send a Message</h3>
                 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="text-left">
-                    <label htmlFor="name" className="block text-white font-medium mb-2">
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
+                <Form {...form}>
+                  <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-6">
+                    <FormField
+                      control={form.control}
                       name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-dark-lighter border border-lilac/20 rounded-lg focus:outline-none focus:border-lilac transition-colors text-white"
-                      required
+                      render={({ field }) => (
+                        <FormItem className="text-left">
+                          <FormLabel className="text-white font-medium">Name</FormLabel>
+                          <FormControl>
+                            <Input
+                              placeholder="Your name"
+                              {...field}
+                              className="w-full px-4 py-3 bg-dark-lighter border border-lilac/20 rounded-lg focus:outline-none focus:border-lilac transition-colors text-white"
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
                     />
-                  </div>
-                  
-                  <div className="text-left">
-                    <label htmlFor="email" className="block text-white font-medium mb-2">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
+                    
+                    <FormField
+                      control={form.control}
                       name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-dark-lighter border border-lilac/20 rounded-lg focus:outline-none focus:border-lilac transition-colors text-white"
-                      required
+                      render={({ field }) => (
+                        <FormItem className="text-left">
+                          <FormLabel className="text-white font-medium">Email</FormLabel>
+                          <FormControl>
+                            <Input
+                              placeholder="Your email"
+                              type="email"
+                              {...field}
+                              className="w-full px-4 py-3 bg-dark-lighter border border-lilac/20 rounded-lg focus:outline-none focus:border-lilac transition-colors text-white"
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
                     />
-                  </div>
-                  
-                  <div className="text-left">
-                    <label htmlFor="message" className="block text-white font-medium mb-2">
-                      Message
-                    </label>
-                    <textarea
-                      id="message"
+                    
+                    <FormField
+                      control={form.control}
                       name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      rows={5}
-                      className="w-full px-4 py-3 bg-dark-lighter border border-lilac/20 rounded-lg focus:outline-none focus:border-lilac transition-colors text-white resize-none"
-                      required
-                    ></textarea>
-                  </div>
-                  
-                  <button
-                    type="submit"
-                    className="w-full py-3 bg-gradient-to-r from-lilac to-lilac-light text-white font-medium rounded-lg hover:opacity-90 transition-all duration-300"
-                  >
-                    Send Message
-                  </button>
-                </form>
+                      render={({ field }) => (
+                        <FormItem className="text-left">
+                          <FormLabel className="text-white font-medium">Message</FormLabel>
+                          <FormControl>
+                            <Textarea
+                              placeholder="Your message"
+                              {...field}
+                              rows={5}
+                              className="w-full px-4 py-3 bg-dark-lighter border border-lilac/20 rounded-lg focus:outline-none focus:border-lilac transition-colors text-white resize-none"
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className={`w-full py-3 bg-gradient-to-r from-lilac to-lilac-light text-white font-medium rounded-lg hover:opacity-90 transition-all duration-300 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                    >
+                      {isSubmitting ? 'Sending...' : 'Send Message'}
+                    </button>
+                  </form>
+                </Form>
               </AnimatedCard>
             </div>
           </div>
