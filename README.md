@@ -35,6 +35,7 @@ Lilac-Dreamer-Resume/
 │── README.md                 # Project documentation
 │── vite.config.ts            # Vite configuration
 │── tsconfig.json             # TypeScript configuration
+
 💻 Installation & Usage
 To run this project locally, follow these steps:
 
