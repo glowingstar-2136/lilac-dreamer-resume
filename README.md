@@ -1,4 +1,4 @@
-Lilac Dreamer Resume 🌸
+#Lilac Dreamer Resume 🌸
 A personal portfolio website built with TypeScript and CSS
 
 📌 Overview
