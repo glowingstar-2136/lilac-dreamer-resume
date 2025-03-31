@@ -6,9 +6,13 @@ Lilac Dreamer Resume is a modern, beautifully designed portfolio website that sh
 
 🔹 Features
 ✅ Fully responsive design ✨
+
 ✅ Interactive contact form that sends messages directly to my Gmail 📩
+
 ✅ Clean and minimalistic UI 💜
+
 ✅ Organized projects showcase with smooth transitions 🖥️
+
 ✅ Fast and optimized using Vite ⚡
 
 🚀 Tech Stack
