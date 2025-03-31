@@ -116,16 +116,6 @@ const Hero: React.FC = () => {
           </button>
         </div>
       </div>
-      
-      {/* Scroll indicator */}
-      <div 
-        className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-opacity duration-1000 ${loaded ? 'opacity-100' : 'opacity-0'}`}
-        style={{ transitionDelay: '1400ms' }}
-      >
-        <div className="w-6 h-10 border-2 border-lilac rounded-full flex justify-center relative">
-          <span className="block w-1 h-2 bg-lilac rounded-full absolute top-2 animate-pulse-subtle"></span>
-        </div>
-      </div>
     </section>
   );
 };
