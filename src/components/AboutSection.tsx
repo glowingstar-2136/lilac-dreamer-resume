@@ -89,11 +89,11 @@ const AboutSection: React.FC = () => {
                 </li>
                 <li className="flex items-center">
                   <span className="text-lilac font-semibold w-24">Email:</span>
-                  <span className="text-gray-300">your.email@example.com</span>
+                  <span className="text-gray-300">yuvashreecv@gmail.com</span>
                 </li>
                 <li className="flex items-center">
                   <span className="text-lilac font-semibold w-24">Location:</span>
-                  <span className="text-gray-300">City, Country</span>
+                  <span className="text-gray-300">Chennai, India</span>
                 </li>
               </ul>
             </div>

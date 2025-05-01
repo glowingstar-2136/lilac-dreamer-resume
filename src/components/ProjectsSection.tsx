@@ -23,8 +23,8 @@ const ProjectsSection: React.FC = () => {
     },
     {
       title: 'Student Resource Hub',
-      description: 'A collaborative platform for students to share study resources and materials.',
-      technologies: ['React', 'Firebase', 'Tailwind CSS'],
+      description: 'An AI-powered content moderation platform for detecting and filtering inappropriate text, images, audio, and video content.',
+      technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'TensorFlow', 'Firebase', 'Tailwind CSS'],
       category: 'web',
     },
   ];

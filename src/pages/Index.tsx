@@ -70,7 +70,7 @@ const Index: React.FC = () => {
       {/* Footer */}
       <footer className="py-8 text-center text-gray-400">
         <div className="container mx-auto px-4">
-          <p>&copy; {new Date().getFullYear()} Yuvashree | Interactive 3D Resume</p>
+          <p>&copy; {new Date().getFullYear()} Yuvashree | Aspiring Software Development Engineer</p>
         </div>
       </footer>
     </div>

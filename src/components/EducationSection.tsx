@@ -60,13 +60,13 @@ const EducationSection: React.FC = () => {
                 <div className="flex-grow text-left">
                   <div className="flex flex-col md:flex-row md:items-center justify-between mb-2">
                     <h3 className="text-xl md:text-2xl font-bold text-lilac-light">
-                      Computer Science & Engineering
+                      B. E. Computer Science & Engineering
                     </h3>
                     <span className="text-sm bg-lilac/20 text-lilac-light px-3 py-1 rounded-full mt-2 md:mt-0">
-                      2023 - Present
+                      2024 - Present
                     </span>
                   </div>
-                  <h4 className="text-lg text-white mb-3">University Name</h4>
+                  <h4 className="text-lg text-white mb-3">St. Joseph's College of Engineering</h4>
                   <p className="text-gray-300">
                     Currently in my first year of studies, focusing on building a strong foundation in programming, algorithms, and software engineering principles.
                   </p>
@@ -108,34 +108,26 @@ const EducationSection: React.FC = () => {
                 <div className="flex-grow text-left">
                   <div className="flex flex-col md:flex-row md:items-center justify-between mb-2">
                     <h3 className="text-xl md:text-2xl font-bold text-lilac-light">
-                      High School Diploma
+                      Elementary to Higher Secondary Schooling
                     </h3>
                     <span className="text-sm bg-lilac/20 text-lilac-light px-3 py-1 rounded-full mt-2 md:mt-0">
-                      2019 - 2023
+                      2011 - 2024
                     </span>
                   </div>
-                  <h4 className="text-lg text-white mb-3">High School Name</h4>
+                  <h4 className="text-lg text-white mb-3">Vani Vidyalaya Senior Secondary and Junior College</h4>
                   <p className="text-gray-300">
-                    Graduated with honors, focusing on mathematics, physics, and computer science. Participated in various STEM competitions and coding challenges.
+                  Focused on computer science, mathematics, physics and chemistry and excelled academically.
                   </p>
                   <div className="mt-4">
                     <h5 className="text-lilac font-medium mb-2">Achievements:</h5>
                     <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-2">
                       <li className="flex items-center text-gray-300">
                         <span className="w-2 h-2 bg-lilac rounded-full mr-2"></span>
-                        GPA: 3.9/4.0
+                        10th Score: 471 / 600
                       </li>
                       <li className="flex items-center text-gray-300">
                         <span className="w-2 h-2 bg-lilac rounded-full mr-2"></span>
-                        Computer Science Club President
-                      </li>
-                      <li className="flex items-center text-gray-300">
-                        <span className="w-2 h-2 bg-lilac rounded-full mr-2"></span>
-                        Regional Coding Competition Finalist
-                      </li>
-                      <li className="flex items-center text-gray-300">
-                        <span className="w-2 h-2 bg-lilac rounded-full mr-2"></span>
-                        Mathematics Honor Society
+                        12th Score: 397 / 600
                       </li>
                     </ul>
                   </div>
@@ -164,7 +156,7 @@ const EducationSection: React.FC = () => {
                   </div>
                   <h4 className="text-lg text-white mb-3">Online Platforms & Self Study</h4>
                   <p className="text-gray-300">
-                    Continuously expanding my knowledge through online courses, coding challenges, and personal projects.
+                    Continuously expanding my knowledge through online courses, coding challenges, and amazing personal projects.
                   </p>
                   <div className="mt-4">
                     <h5 className="text-lilac font-medium mb-2">Key Learning:</h5>
