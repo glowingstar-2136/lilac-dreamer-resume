@@ -29,7 +29,7 @@ const ProjectsSection: React.FC = () => {
     {
       title: 'Levox (Open Source Contribution – GDPR Compliance Tool) 🔐⚖️',
       description: 'Contributed to Levox, a GDPR compliance scanner, by enhancing the frontend interface and performing functional testing, improving usability and reliability for 100+ developers.',
-      technologies: ['React', 'TypeScript', 'Tailwind CSS'],
+      technologies: ['Python', 'React', 'TypeScript', 'Tailwind CSS'],
       category: 'web',
       image: '/images/levox.png',
       website: 'https://levox.fenrixai.tech/',
@@ -41,8 +41,8 @@ const ProjectsSection: React.FC = () => {
       technologies: ['React', 'TypeScript', 'Node.js', 'Express.js', 'MongoDB', 'TensorFlow', 'Firebase', 'Tailwind CSS'],
       category: 'web',
       image: '/images/athena.png',
-      website: 'https://levox.fenrixai.tech/',
-      github: 'https://pypi.org/project/levox/'
+      website: '#',
+      github: '#'
     },
     {
       title: 'SJCE Web Portal: Yuvi’s Edition 💻👑',
