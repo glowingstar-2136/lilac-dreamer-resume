@@ -84,7 +84,7 @@ const AboutSection: React.FC = () => {
                 </li>
                 <li className="flex items-center">
                   <span className="text-lilac font-semibold w-24">Age:</span>
-                  <span className="text-gray-300">19</span>
+                  <span className="text-gray-300">20</span>
                 </li>
                 <li className="flex items-center">
                   <span className="text-lilac font-semibold w-24">Email:</span>
