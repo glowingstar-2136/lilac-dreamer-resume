@@ -46,7 +46,7 @@ const AboutSection: React.FC = () => {
               <div className="bg-gradient-to-br from-lilac/30 to-lilac-dark/20 w-full h-full rounded-lg flex items-center justify-center">
                 <div className="relative w-4/5 h-4/5">
                   <img 
-                    src="/images/MEH.jpeg" 
+                    src="/images/MEH.jpg" 
                     alt="Yuvashree's Photo" 
                     className="absolute inset-0 w-full h-full object-cover rounded-lg shadow-xl z-10"
                   />
